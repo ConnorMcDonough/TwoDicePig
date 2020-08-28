@@ -1,0 +1,4 @@
+#Thu Feb 20 16:55:57 EST 2020
+base.0=H\:\\Software\\ownCloudFiles\\AndroidCode\\TwoDicePig\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

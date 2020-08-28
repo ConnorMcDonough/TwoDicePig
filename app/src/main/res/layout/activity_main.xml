@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/green_felt"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/rollButton_id"
+        android:layout_width="248dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="rollDiceOnClick"
+        android:text="Roll Dice"
+        app:layout_constraintBottom_toTopOf="@+id/holdButton_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/holdButton_id"
+        android:layout_width="217dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginRight="97dp"
+        android:layout_marginBottom="44dp"
+        android:onClick="holdOnClick"
+        android:text="Hold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/diceOne_id"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/six_dice_foreground" />
+
+    <ImageView
+        android:id="@+id/diceTwo_id"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/five_dice_foreground" />
+
+    <TextView
+        android:id="@+id/playerOneTotal_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="224dp"
+        android:layout_marginRight="224dp"
+        android:layout_marginBottom="8dp"
+        android:text="Player 1 Total: 0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/playerTwoTotal_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/playerTwoTotal_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="224dp"
+        android:layout_marginRight="224dp"
+        android:layout_marginBottom="24dp"
+        android:text="Player 2 Total: 0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/currentPlayer_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/currentPlayer_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="224dp"
+        android:layout_marginRight="224dp"
+        android:layout_marginBottom="14dp"
+        android:text="Current Player: P1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/diceOne_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/totalTurn_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginRight="119dp"
+        android:layout_marginBottom="32dp"
+        android:text="Total Turn: 0"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/winner_id"
+        android:layout_width="349dp"
+        android:layout_height="196dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="22dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/totalTurn_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/p1winner" />
+
+    <Button
+        android:id="@+id/restartButton_id"
+        android:layout_width="161dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="40dp"
+        android:clickable="false"
+        android:onClick="restartGame"
+        android:text="Restart"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/winner_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerOneTotal_id" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
